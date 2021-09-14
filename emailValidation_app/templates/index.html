@@ -13,9 +13,12 @@
             <div class="col">
 
                 <div class="card p-3 bg-light" style="width: 30rem;">
-                    <form class="form-group" action="PUT SOMETHING HERE" methods="post">
+                    <form class="form-group" action="/register" method="POST">
                         <label for="email">Email:</label>
                         <input class="form-control" type="text" name="email">
+                        {% for message in get_flashed_messages(category_filter = ["email"]) %}
+                            <p class="alert alert-warning">{{ message }}</p>
+                        {% endfor %}
                         <input type="submit" class="mt-2 btn btn-info" value="Add Email">
                     </form>
                 </div>
